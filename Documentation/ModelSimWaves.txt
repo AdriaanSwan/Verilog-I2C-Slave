@@ -1,0 +1,49 @@
+//Test one
+//--------
+wave modify -driver freeze -pattern clock -initialvalue 0 -period 15ns -dutycycle 50 -starttime 0ns -endtime 10000ns Edit:/Test/CLCK
+wave modify -driver freeze -pattern repeater -initialvalue 1 -period 60ns -sequence { 1 1 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 1 1 } -repeat forever -starttime 0ns -endtime 10000ns Edit:/Test/SCL
+wave modify -driver freeze -pattern repeater -initialvalue 1 -period 60ns -sequence { 1 1 0 1 1 1 1 0 0 0 0 0 0 1 1 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 } -repeat forever -starttime 0ns -endtime 10000ns Edit:/Test/SDA
+//Notes
+//1. End not corrent
+
+//Test two
+//--------
+wave modify -driver freeze -pattern clock -initialvalue 0 -period 15ns -dutycycle 50 -starttime 0ns -endtime 10000ns Edit:/Test/CLCK
+wave modify -driver freeze -pattern repeater -initialvalue 1 -period 60ns -sequence { 1 1 1 0 0 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 } -repeat forever -starttime 0ns -endtime 10000ns Edit:/Test/SDA
+wave modify -driver freeze -pattern repeater -initialvalue 1 -period 60ns -sequence { 1 1 1 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 1 1 1 1 1 1 1 1 1 } -repeat forever -starttime 0ns -endtime 10000ns Edit:/Test/SCL
+//Notes
+//1. Start, end and incycle working
+//2. Address 1110010
+
+
+//Test Three
+//----------
+wave modify -driver freeze -pattern clock -initialvalue 0 -period 15ns -dutycycle 50 -starttime 0ns -endtime 10000ns Edit:/Test/CLCK
+wave modify -driver freeze -pattern repeater -initialvalue 1 -period 60ns -sequence { 1 1 1 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 } -repeat forever -starttime 0ns -endtime 10000ns Edit:/Test/SDA
+wave modify -driver freeze -pattern repeater -initialvalue 1 -period 60ns -sequence { 1 1 1 1 1 1 0 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 1 1 1 1 1 1 1 1 1 } -repeat forever -starttime 0ns -endtime 10000ns Edit:/Test/SCL
+//Notes
+//1. Start, end and incycle working
+//2. Address 1110010
+//3. Stretched start to closer match Arduino Uno
+
+
+//Test Four
+//----------
+wave modify -driver freeze -pattern clock -initialvalue 0 -period 15ns -dutycycle 50 -starttime 0ns -endtime 10000ns Edit:/Test/CLCK
+wave modify -driver freeze -pattern repeater -initialvalue 1 -period 60ns -sequence { 1 1 1 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1} -repeat never -starttime 0ns -endtime 10000ns Edit:/Test/SDA
+wave modify -driver freeze -pattern repeater -initialvalue 1 -period 60ns -sequence { 1 1 1 1 1 1 0 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 } -repeat never -starttime 0ns -endtime 10000ns Edit:/Test/SCL
+//Notes
+//1. Start, end and incycle working
+//2. Address 1110010
+//3. Stretched start to closer match Arduino Uno
+//4. Added read request
+
+//Test 5
+//------
+wave modify -driver freeze -pattern clock -initialvalue 0 -period 15ns -dutycycle 50 -starttime 0ns -endtime 10000ns sim:/I2CTest/CLCK
+wave modify -driver freeze -pattern repeater -initialvalue 1 -period 60ns -sequence { 1 1 1 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1} -repeat never -starttime 0ns -endtime 10000ns sim:/I2CTest/SDA
+wave modify -driver freeze -pattern repeater -initialvalue 1 -period 60ns -sequence { 1 1 1 1 1 1 0 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 } -repeat never -starttime 0ns -endtime 10000ns sim:/I2CTest/SCL
+//Notes
+//1. Minor updated for latest project/library in ModelSim
+
+

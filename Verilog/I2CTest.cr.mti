@@ -1,0 +1,8 @@
+C:/Development/Personal/I2CFPGA/Verilog/I2CTest.v {1 {vlog -work I2CTest C:/Development/Personal/I2CFPGA/Verilog/I2CTest.v
+Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+-- Compiling module I2CTest
+
+Top level modules:
+	I2CTest
+
+} {} {}}
