@@ -12,7 +12,7 @@ Tested using [Amani GT](http://www.amani64.com/hardware.htm) Arduino Shield with
 3. Arduino
 	* Contains Arduino I2C master code
 	
-###This is sample code only, produced for personal experimentation and provided for illustrative purposes only. This code has not been thoroughly tested under all conditions. Therefore there is no guarantee or implied reliability, serviceability, or function of this code.
+######This is sample code only, produced for personal experimentation and provided for illustrative purposes only. This code has not been thoroughly tested under all conditions. Therefore there is no guarantee or implied reliability, serviceability, or function of this code.
 
-###All programs contained herein are provided to you "AS IS" without any warranties of any kind. The implied warranties of non-infringement, merchantability and fitness for a particular purpose are expressly disclaimed.
+######All programs contained herein are provided to you "AS IS" without any warranties of any kind. The implied warranties of non-infringement, merchantability and fitness for a particular purpose are expressly disclaimed.
 
