@@ -1,41 +1,43 @@
 #include <Wire.h>
 
-int value;
+byte value;
 int address;
 
 void setup()
 {
-  Wire.begin();
-  Serial.begin(115200);
-  Serial.println("\nVerilog I2C Test");
   value = 0;
   address = 114;
+  
+  Wire.begin();
+  Serial.begin(115200);
+  Serial.println("Verilog I2C Test\n\n");
+
+  delay(1000);
 }
 
 void loop()
 {
-  delay(1000);
-  Serial.print("Starting to ");
-  Serial.print(address);
-  Serial.print(" with ");
+  Serial.print("Address\t");
+  Serial.println(address);
+  Serial.print("Value\t");
   Serial.println(value);
 
   Wire.beginTransmission(address);
   Wire.write(value);
   int error = Wire.endTransmission();
-  Serial.println("Device response OK");
-  value++;    
+     
+  Serial.print("Result\t");
+  Serial.println(error);    
       
   Wire.requestFrom(address, 2);
   while(Wire.available()) 
   {
-    Serial.print("Reading: ");
+    Serial.print("Read\t");
     Serial.println(Wire.read());
   }
-  
-  Serial.println("");
-  Serial.println("==================================================");
-  Serial.println("");
-  delay(1000);        
+  Serial.println("\n");
+   
+  value++;
+  delay(5);
 }
 

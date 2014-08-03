@@ -1,4 +1,4 @@
-#_Verilog I2C Client_
+#_Basic Verilog I2C Client_
 
 Developed using [Qaurtus II Web-Edition](http://www.altera.com/products/software/quartus-ii/web-edition/qts-we-index.html) 
 
