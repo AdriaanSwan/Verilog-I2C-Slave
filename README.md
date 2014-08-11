@@ -1,4 +1,4 @@
-#_Basic Verilog I2C Client_
+#_Basic Verilog I2C Slave_
 
 Developed using [Qaurtus II Web-Edition](http://www.altera.com/products/software/quartus-ii/web-edition/qts-we-index.html) 
 
@@ -6,7 +6,7 @@ Tested using [Amani GT](http://www.amani64.com/hardware.htm) Arduino Shield with
 
 ##Folders
 1. Verilog
-	* Contains Quartus project with I2C client Verilog code
+	* Contains Quartus project with I2C slave Verilog code
 2. Documentation
 	* Contains ModelSim wave forms
 3. Arduino

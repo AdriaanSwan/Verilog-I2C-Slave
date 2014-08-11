@@ -29,7 +29,7 @@ void loop()
   Serial.print("Result\t");
   Serial.println(error);    
       
-  Wire.requestFrom(address, 2);
+  Wire.requestFrom(address, 3);
   while(Wire.available()) 
   {
     Serial.print("Read\t");
@@ -38,6 +38,6 @@ void loop()
   Serial.println("\n");
    
   value++;
-  delay(5);
+  delay(10);
 }
 

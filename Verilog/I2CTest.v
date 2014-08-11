@@ -8,7 +8,7 @@ inout SDA;
 parameter slaveaddress = 7'b1110010;
 
 //Sample registers to send to requesting device
-reg[2:0] valuecnt = 3'b010; //Count of bytes to be sent, send read value twice
+reg[2:0] valuecnt = 3'b011; //Count of bytes to be sent, send read value twice
 
 //Synch SCL edge to the CPLD clock
 reg [2:0] SCLSynch = 3'b000;  
@@ -55,7 +55,7 @@ reg[7:0] datain = 8'b00000000;
 reg rw = 1'b0;
 reg addressmatch = 1'b0;
 always @(posedge SCL_posedge or negedge incycle)
-	if (~incycle)
+	if (~incycle)	
 	begin
 		//Reset the bit counter at the end of a sequence
 		bitcount = 0;
@@ -81,7 +81,7 @@ always @(posedge SCL_posedge or negedge incycle)
 	
 //ACK's and out going data
 reg sdadata = 1'bz; 
-reg [3:0] currvalue = 0;
+reg [2:0] currvalue = 	0;
 always @(posedge SCL_negedge) 
 	//ACK's
 	if (((bitcount == 8) | ((bitcount == 17) & ~rw)) & (addressmatch))
@@ -99,7 +99,7 @@ always @(posedge SCL_negedge)
 			sdadata = 1'bz;
 			currvalue = currvalue + 1;
 		end
-		else sdadata = datain[7 - ((bitcount - 9) - (currvalue * 9))]; //Modify this to send actual data, currently echoing incomming data
+		else sdadata = datain[7 - ((bitcount - 9) - (currvalue * 9))]; //Modify this to send actual data, currently echoing incomming data valuecnt times
 	end
 	//Nothing (cause nothing tastes like fresca)
 	else sdadata = 1'bz;
